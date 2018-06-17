@@ -51,10 +51,11 @@ class PageController extends Controller
                 $page = Page::find($all['id']);
             } else {
                 $page = new Page;
+                $page->slug = str_slug($all['name'], '-');
             }
             if (isset($all['name']) && !empty($all['name'])){
                 $page->title = $all['name'];
-                $page->slug = str_slug($all['name'], '-');
+                
             }
             if (isset($all['matatag']) && !empty($all['matatag']))
                 $page->matatag = $all['matatag'];

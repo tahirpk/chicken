@@ -79,7 +79,7 @@ class ProductController extends Controller
                 if($file = Input::file('image')){
                 
                 foreach(Input::file('image') as $file){
-                    $pimage = new Productimage;
+                    $pimage          = new Productimage;
                     $fileName        = $file->getClientOriginalName();
                     $extension       = $file->getClientOriginalExtension() ?: 'png';
                     $folderName      = '/uploads/products/';

@@ -14,21 +14,51 @@ use Link;
 use Assignpermission;
 use Role;
 use User;
+use File;
+use Image;
+use App\Configuration;
+use App\Models\Admin\Customsetting;
 
-class PermissionController extends Controller {
+class ConfigurationController extends Controller {
     /* ----------------------------- view list action --------------------- */
 
-    public function index() {
+    public function homepage() {
         if (Permission::hasAccess('view', 'permission')) {
-            $permission = new Permission;
-            if (Input::get('key')) {
-                $permission->where('name', 'like', '%' . Input::get('key') . '%');
-                $permission->where('display_name', 'like', '%' . Input::get('key') . '%');
-                $permission->where('description', 'like', '%' . Input::get('key') . '%');
-            }
-            $permisssions = $permission->paginate(20);
+            $configurations = Customsetting::where('setting_type','Homepage')->get();
+            $groups = Customsetting::distinct('setting_type')->get();
+            
 
-            return view(Config::get('config.template') . '.pages.admin.permissions.list')->withPermissions($permisssions);
+            return view(Config::get('config.template') . '.pages.admin.configuration.list')->withConfigurations($configurations)->withGroups($groups);
+        }
+        return Redirect::to('admin/error/404');
+    }
+    public function general() {
+        if (Permission::hasAccess('view', 'permission')) {
+            $configurations = Customsetting::where('setting_type','General')->get();
+            $groups = Customsetting::distinct('setting_type')->get();
+            
+
+            return view(Config::get('config.template') . '.pages.admin.configuration.list')->withConfigurations($configurations)->withGroups($groups);
+        }
+        return Redirect::to('admin/error/404');
+    }
+    public function smtp() {
+        if (Permission::hasAccess('view', 'permission')) {
+            $configurations = Customsetting::where('setting_type','SMTP')->get();
+            $groups = Customsetting::distinct('setting_type')->get();
+            
+
+            return view(Config::get('config.template') . '.pages.admin.configuration.list')->withConfigurations($configurations)->withGroups($groups);
+        }
+        return Redirect::to('admin/error/404');
+    }
+    public function social() {
+        if (Permission::hasAccess('view', 'permission')) {
+            $configurations = Customsetting::where('setting_type','Social Media')->get();
+            $groups = Customsetting::distinct('setting_type')->get();
+            
+
+            return view(Config::get('config.template') . '.pages.admin.configuration.list')->withConfigurations($configurations)->withGroups($groups);
         }
         return Redirect::to('admin/error/404');
     }
@@ -49,31 +79,47 @@ class PermissionController extends Controller {
         if (Permission::hasAccess('create', 'permission')) {
             $user = Auth::user();
             $all = Input::all();
-
-
-            if (isset($all['id']) && !empty($all['id'])) {
-                $role = new Permission;
-                $role = Permission::find($all['id']);
-            } else {
-                $role = new Permission;
+            $settings= Customsetting::get();
+           // echo '<pre>'; print_r($all);
+            $keys=array();
+            foreach($all as $key=>$val){
+                if($key!='_token'){
+                    $keys[]=$key;
+                }
+                
             }
-            if (isset($all['name']) && !empty($all['name']))
-                $role->name = $all['name'];
-            if (isset($all['display_name']) && !empty($all['display_name']))
-                $role->display_name = $all['display_name'];
-            if (isset($all['description']) && !empty($all['description']))
-                $role->description = $all['description'];
+            foreach($settings as $setting){
+                //echo $setting->name."<br />";
+                if(in_array($setting->name,$keys)){
+                    if($setting->html_control_type=='file'){
+                        if($file = Input::file($setting->name)){
+                                 
+                                $img = Customsetting::find($setting->id);
+                                $fileName        = $file->getClientOriginalName();
+                                $extension       = $file->getClientOriginalExtension() ?: 'png';
+                                $folderName      = '/uploads/configurations/';
+                                $destinationPath = public_path() . $folderName;
+                                $safeName        = $setting->name.'.'.$extension;
+                                
+                                @$file->move($destinationPath, $safeName);
 
-            $role->created_by = $user->id;
-            $role->updated_by = $user->id;
-            //$category->updatedsfsfsdf_by = $user->id;
-            if ($role->save()) {
-                Session::flash('message', 'Permission successfully saved');
-                return Redirect::to('admin/permission/list');
-            } else {
-                Session::flash('message', 'Saving permission failed! please try again');
-                return Redirect::to('admin/create/perrmission');
+                                //delete old pic if exists
+                                
+                                $img->value=$safeName;
+                                $img->save();
+                        }
+                    }else{
+                        Customsetting::where('id',$setting->id)->update(['value'=>$all[$setting->name]]);
+                    }
+                    
+                }
             }
+            
+            
+            
+                Session::flash('message', 'Configurations successfully saved');
+                return Redirect::to('admin/homepage/settings');
+            
         }
         return Redirect::to('admin/error/404');
     }

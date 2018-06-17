@@ -8,7 +8,7 @@ use Config;
 use Portfolio;
 use Projectcategory;
 use Project;
-use App\Models\Admin\News;
+use News;
 use App\Models\Admin\Category;
 use Portalbranch;
 use App\Configuration;
@@ -19,7 +19,7 @@ class FrontendController extends Controller
 {
     
     public function index(){
-       
+        
         $about= Page::where('slug','we-are-farm-fresh')->first();
         $categories =   Category::limit(6)->orderby('created_at','DESC')->get();
         $newses =   News::limit(3)->orderby('created_at','DESC')->get();

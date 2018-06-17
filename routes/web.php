@@ -69,6 +69,18 @@ Route::group(['namespace' => 'Admin'], function() {
     Route::post('admin/create/news', ['as' => 'category', 'uses' => 'NewsController@store']);
     Route::get('admin/news/list', ['as' => 'category', 'uses' => 'NewsController@index']);
     
+// News Routes
+    Route::get('admin/create/slider', ['as' => 'category', 'uses' => 'SliderController@create']);
+    Route::get('admin/create/slider/{id}', ['as' => 'category', 'uses' => 'SliderController@edit']);
+    Route::get('admin/delete/slider/{id}', ['as' => 'category', 'uses' => 'SliderController@remove']);
+    Route::post('admin/create/slider', ['as' => 'category', 'uses' => 'SliderController@store']);
+    Route::get('admin/slider/list', ['as' => 'category', 'uses' => 'SliderController@index']);
+    Route::get('admin/create/slider/images/{id}', ['as' => 'category', 'uses' => 'SliderController@createimages']);
+    
+    Route::get('admin/delete/slider/image/{id}', ['as' => 'category', 'uses' => 'SliderController@removeimage']);
+    Route::post('admin/create/slider/images', ['as' => 'category', 'uses' => 'SliderController@storeimages']);
+    Route::get('admin/slider/image/list/{id}', ['as' => 'category', 'uses' => 'SliderController@indeximage']);
+    
 // News Category Routes
     Route::get('admin/create/newscategory', ['as' => 'category', 'uses' => 'NewscategoryController@create']);
     Route::get('admin/create/newscategory/{id}', ['as' => 'category', 'uses' => 'NewscategoryController@edit']);
@@ -129,6 +141,13 @@ Route::group(['namespace' => 'Admin'], function() {
     Route::get('admin/permission/list', ['as' => 'permission', 'uses' => 'PermissionController@index']);
     Route::get('admin/permission/assign', ['as' => 'permission', 'uses' => 'PermissionController@assign']);
     Route::post('admin/permission/assign', ['as' => 'permission', 'uses' => 'PermissionController@attach']);
+    
+    // Custom Settings
+    Route::get('admin/homepage/settings', ['as' => 'permission', 'uses' => 'ConfigurationController@homepage']);
+    Route::get('admin/smtp/settings', ['as' => 'permission', 'uses' => 'ConfigurationController@smtp']);
+    Route::get('admin/general/settings', ['as' => 'permission', 'uses' => 'ConfigurationController@general']);
+    Route::get('admin/socialmedia/settings', ['as' => 'permission', 'uses' => 'ConfigurationController@social']);
+    Route::post('admin/save/settings', ['as' => 'permission', 'uses' => 'ConfigurationController@store']);
 });
 //Route::get('products', ['as' => 'home', 'uses' => 'Frontend/ProductController@index']);
 

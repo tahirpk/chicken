@@ -48,7 +48,7 @@
                                     <tr>
                                         <th>Module</th>
                                         @if(count($permissions))
-                                            @foreach($permissions as $permission)<th>{{$permission->display_name}}</th>@endforeach
+                                            @foreach($permissions as $permission)<th>{{$permission['module']}}</th>@endforeach
                                             <th>All</th>
                                         @endif
                                     </tr>

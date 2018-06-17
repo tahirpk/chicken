@@ -39,6 +39,13 @@
 			<ul class="acc-menu">
 				<li><a href="{{URL::to('admin/create/page')}}">Create</a></li>
 				<li><a href="{{URL::to('admin/page/list')}}">List</a></li>
+                                <li><a href="javascript:;">Sliders</a>
+					<ul class="acc-menu">
+						<li><a href="{{URL::to('admin/create/slider')}}">Create</a></li>
+						<li><a href="{{URL::to('admin/slider/list')}}">List</a></li>
+						
+					</ul>
+				</li>
 				
 			</ul>
 		</li>
@@ -123,6 +130,18 @@
                         </li>
                 </ul>
                 </li>
+                <li><a href="javascript:;"><i class="ti ti-control-shuffle"></i><span>Configurations</span></a>
+                        <ul class="acc-menu">
+                                <li><a href="{{URL::to('admin/homepage/settings')}}">Homepage Settings</a></li>
+				<li><a href="{{URL::to('admin/smtp/settings')}}">SMTP Settings</a></li>
+                                <li><a href="{{URL::to('admin/general/settings')}}">General Settings</a></li>
+                                <li><a href="{{URL::to('admin/socialmedia/settings')}}">Social Media Settings</a></li>
+                                <li><a href="{{URL::to('admin/socialmedia/settings')}}">Footer Settings</a></li>
+                                
+
+                        </ul>
+                </li>
+
 		<li><a href="javascript:;"><i class="ti ti-pencil"></i><span>Forms</span></a>
 			<ul class="acc-menu">
 				<li><a href="ui-forms.html">Form Layout</a></li>
