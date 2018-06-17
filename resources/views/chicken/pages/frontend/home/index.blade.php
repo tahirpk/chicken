@@ -86,40 +86,8 @@
                                 Counter Number Section
                         ============================================== 
             -->
-            <section class="counter-number">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-xs-6">
-                            <div class="counter-box">
-                                <i class="icon flaticon-business float_left"></i>
-                                <h6>Cheap like own</h6>
-                                <div class="number"><span class="timer" data-from="0" data-to="100" data-speed="1" data-refresh-interval="5">0</span>%</div>
-                            </div> <!-- /.counter-box -->
-                        </div> <!-- /.col- -->
-                        <div class="col-md-3 col-xs-6">
-                            <div class="counter-box">
-                                <i class="icon flaticon-rate float_left"></i>
-                                <h6>Healthy like responsibility</h6>
-                                <div class="number"><span class="timer" data-from="0" data-to="100" data-speed="2" data-refresh-interval="5">0</span>%</div>
-                            </div> <!-- /.counter-box -->
-                        </div> <!-- /.col- -->
-                        <div class="col-md-3 col-xs-6">
-                            <div class="counter-box">
-                                <i class="icon flaticon-construction float_left"></i>
-                                <h6>Fresh like home</h6>
-                                <div class="number"><span class="timer" data-from="0" data-to="100" data-speed="3" data-refresh-interval="5">0</span>%</div>
-                            </div> <!-- /.counter-box -->
-                        </div> <!-- /.col- -->
-                        <div class="col-md-3 col-xs-6">
-                            <div class="counter-box">
-                                <i class="icon flaticon-medal float_left"></i>
-                                <h6>Attested, Warrentied</h6>
-                                <div class="number"><span class="timer" data-from="0" data-to="100" data-speed="5" data-refresh-interval="5">0</span>%</div>
-                            </div> <!-- /.counter-box -->
-                        </div> <!-- /.col- -->
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->
-            </section> <!-- /.counter-number -->
+           
+            <!-- /.counter-number -->
 
             <!-- 
             =============================================
@@ -192,130 +160,25 @@ to regional tastes.</h6>
                     Testimonial Section
             ============================================== 
             -->
-            <section class="testimonial">
-                <div class="opacity">
-                    <div class="container">
-                        <div class="main_title">
-                            <h2>What People Say?</h2>
-                        </div> <!-- End of .main_title -->
-                        <div class="owl-carousel owl-theme" id="testimonial-slider">
-                            <div class="item">
-                                <div class="info_wrapper">
-                                    <div class="client_info">
-                                        <img src="{{ asset('assets/'.Config::get('config.front_template').'/frontend/images/inner-page/testimonial-1.jpg')}}" alt="client" class="border_round float_left">
-                                        <div class="name float_left">
-                                            <h6>Mahfuz Riad</h6>
-                                            <span>CEO, Company</span>
-                                        </div> <!-- End of .name -->
-                                        <div class="clear_fix"></div>
-                                    </div> <!-- End of .client_info -->
-                                    <div class="brief-content">
-                                        <h6>I’ve been happy with the services provided by Finazi LLC. Felix has been wonderful! He has returned my calls quickly, and he answered all my questions.</h6>
-                                        <span></span>
-                                        <span></span>
-                                    </div><!-- End of .brief-content -->
-                                </div> <!-- End of .info_wrapper -->
-                            </div> <!-- End of .item -->
-                            <div class="item">
-                                <div class="info_wrapper">
-                                    <div class="client_info">
-                                        <img src="{{ asset('assets/'.Config::get('config.front_template').'/frontend/images/inner-page/testimonial-2.jpg')}}" alt="client" class="border_round float_left">
-                                        <div class="name float_left">
-                                            <h6>Zuber All Hasan</h6>
-                                            <span>CEO, Developer</span>
-                                        </div> <!-- End of .name -->
-                                        <div class="clear_fix"></div>
-                                    </div> <!-- End of .client_info -->
-                                    <div class="brief-content">
-                                        <h6>I’ve been happy with the services provided by Finazi LLC. Felix has been wonderful! He has returned my calls quickly, and he answered all my questions.</h6>
-                                        <span></span>
-                                        <span></span>
-                                    </div><!-- End of .brief-content -->
-                                </div> <!-- End of .info_wrapper -->
-                            </div> <!-- End of .item -->
-                            <div class="item">
-                                <div class="info_wrapper">
-                                    <div class="client_info">
-                                        <img src="{{ asset('assets/'.Config::get('config.front_template').'/frontend/images/inner-page/testimonial-1.jpg')}}" alt="client" class="border_round float_left">
-                                        <div class="name float_left">
-                                            <h6>Mahfuz Riad</h6>
-                                            <span>CEO, Company</span>
-                                        </div> <!-- End of .name -->
-                                        <div class="clear_fix"></div>
-                                    </div> <!-- End of .client_info -->
-                                    <div class="brief-content">
-                                        <h6>I’ve been happy with the services provided by Finazi LLC. Felix has been wonderful! He has returned my calls quickly, and he answered all my questions.</h6>
-                                        <span></span>
-                                        <span></span>
-                                    </div><!-- End of .brief-content -->
-                                </div> <!-- End of .info_wrapper -->
-                            </div> <!-- End of .item -->
-                            <div class="item">
-                                <div class="info_wrapper">
-                                    <div class="client_info">
-                                        <img src="{{ asset('assets/'.Config::get('config.front_template').'/frontend/images/inner-page/testimonial-2.jpg')}}" alt="client" class="border_round float_left">
-                                        <div class="name float_left">
-                                            <h6>Zuber All Hasan</h6>
-                                            <span>CEO, Developer</span>
-                                        </div> <!-- End of .name -->
-                                        <div class="clear_fix"></div>
-                                    </div> <!-- End of .client_info -->
-                                    <div class="brief-content">
-                                        <h6>I’ve been happy with the services provided by Finazi LLC. Felix has been wonderful! He has returned my calls quickly, and he answered all my questions.</h6>
-                                        <span></span>
-                                        <span></span>
-                                    </div><!-- End of .brief-content -->
-                                </div> <!-- End of .info_wrapper -->
-                            </div> <!-- End of .item -->
-                        </div><!-- End of .testimonial-slider -->
-                    </div><!-- End of .container -->
-                </div><!-- End of .container -->    
-            </section><!-- End of .container -->	
+            
+            <!-- End of .container -->	
 
             <!-- 
                         =============================================
                                 Latest News Section
                         ============================================== 
             -->		
-            <section class="latest-news">
-                <div class="container">
-                    <div class="latest-title">
-                        <h2>Latest News</h2>	
-                    </div><!-- /.latest-title-->
-                    <div class="row">
-                        @foreach($newses as $news)
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="latest-single-content">
-                                <img src="{{ asset('uploads/news/'.$news->picture)}}" alt="latest">
-                                <div class="news-single-content wow fadeInUp animated">
-                                    <h4><a href="{{URL::to('news/'.$news->slug)}}" class="tran3s">{{$news->title}}</a></h4>
-                                    <p>{{date('d M, Y',strtotime($news->created_at))}}</p>
-                                    <p class="tran3s">{{$news->title}}</p>
-                                </div><!-- /.news-single-content-->   
-                            </div><!-- /.latest-single-content--> 	
-                        </div><!-- /.col- -->
-                        @endforeach
-                      			        	
-                    </div><!-- /.row- -->     	
-                </div><!-- /.container-->	
-            </section><!-- /.latest-news-->
+           
+            <!-- /.latest-news-->
 
             <!-- 
                 =============================================
                 partners section
                 ==============================================
             -->
-            <div class="partners-section">
-                <div class="container">
-                    <div class="row">
-                        <div id="partners" class="owl-carousel owl-theme owl-partners">
-                            <div class="item"><img src="{{ asset('assets/'.Config::get('config.front_template').'/frontend/images/logo/prtn-logo-1.png')}}" alt="partners"></div><!-- /.item-->
-                            <div class="item"><img src="{{ asset('assets/'.Config::get('config.front_template').'/frontend/images/logo/prtn-logo-2.png')}}" alt="partners"></div><!-- /.item-->
-                            <div class="item"><img src="{{ asset('assets/'.Config::get('config.front_template').'/frontend/images/logo/prtn-logo-3.png')}}" alt="partners"></div><!-- /.item-->
-                            <div class="item"><img src="{{ asset('assets/'.Config::get('config.front_template').'/frontend/images/logo/prtn-logo-4.png')}}" alt="partners"></div><!-- /.item-->
-                        </div><!-- /.owl-partners-->
-                    </div><!-- /.row-->
-                </div><!-- /.container-->
+            
+
+        <!-- /.container-->
             </div><!-- /.partners-section-->
 
 @endsection

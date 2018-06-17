@@ -24,37 +24,17 @@
                             <div class="footer-Useful-Links">
                                 <h5>Important Links</h5>
                                 <ul>
-                                    <li><a href="#" class="tran3s">Support</a></li>
+                                    <li><a href="{{ URL::to('contact-us') }}" class="tran3s">Support</a></li>
                                     <li><a href="{{URL::to('contents/about-us')}}" class="tran3s">About us</a></li>
-                                    <li><a href="#" class="tran3s">Our Clients</a></li>
-                                    <li><a href="shop.html" class="tran3s">Products</a></li>
-                                    <li><a href="blog-v2.html" class="tran3s">News</a></li>
-                                    <li><a href="#" class="tran3s">Food</a></li>
+                                    
+                                    <li><a href="{{URL::to('products')}}" class="tran3s">Products</a></li>
+                                    
                                 </ul>
-                                <ul>
-                                    <li><a href="#" class="tran3s">Fruits</a></li>
-                                    <li><a href="#" class="tran3s">Success Stories</a></li>
-                                    <li><a href="#" class="tran3s">What We Do</a></li>
-                                    <li><a href="#" class="tran3s">Living Areas</a></li>
-                                    <li><a href="#" class="tran3s">Vegetable</a></li>
-                                    <li><a href="{{URL::to('contents/about-us')}}" class="tran3s">Contact us</a></li>
-                                </ul>
+                                
                             </div> <!-- /.footer-Useful-Links -->
                         </div> <!-- /.col- -->
 
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="footer-Update">
-                                <h5>News Update</h5>
-                                <div class="footer-News">
-                                    <h6><a href="blog-details-v2.html" class="tran3s">Prefinished Solid Hardwood<br> Flooring</a></h6>
-                                    <p>january 02,2017</p>
-                                </div> <!-- /.footer-News- -->
-                                <div class="footer-News">
-                                    <h6><a href="blog-details-v2.html" class="tran3s">Prefinished Engineered Hardwood<br> Flooring</a></h6>
-                                    <p>january 07,2017</p>
-                                </div> <!-- /.footer-News -->    	
-                            </div>  <!-- /.footer-Update -->
-                        </div> <!-- /.col- -->
+                    <!-- /.col- -->
                     </div> <!-- /.row -->
                 </div> <!-- /.container -->
 
@@ -62,7 +42,7 @@
                 <div class="bottom-footer">
                     <div class="container">
                         <div class="float_left">  
-                            <p>Copyright © 2017 <a href="https://themeforest.net/user/designolo/portfolio" class="tran3s p-color" target="_blank"> Farmfresh</a> All Rights Reserved by <a href="https://themeforest.net/user/designolo/portfolio" class="p-color tran3s" target="_blank"> Designolo</a></p>
+                            <p>Copyright © 2017 <a href="{{ URL::to('contents/about-us')}}" class="tran3s p-color" target="_blank"> Farmfresh</a> All Rights Reserved.
                         </div> <!-- /.float-left -->
                         <div class="float_right">    
                             <form action="#"> 
