@@ -102,6 +102,7 @@ class ConfigurationController extends Controller {
                                 $safeName        = $setting->name.'.'.$extension;
                                 
                                 @$file->move($destinationPath, $safeName);
+                                header ("Connection: close");
 
                                 //delete old pic if exists
                                 
