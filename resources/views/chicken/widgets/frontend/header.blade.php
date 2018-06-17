@@ -26,7 +26,7 @@
         <div class="container">
             <div class="theme-main-menu">
                 <div class="logo float_left">
-                    <a href="{{URL::to('/')}}"><img src="{{ asset('uploads/configurations/'.$logo)}}" style="max-height:65px;" alt="logo" class="img-responsive"></a>
+                    <a href="{{URL::to('/')}}"><img src="{{ asset('uploads/configurations/'.$logo)}}" style="max-height:89px;" alt="logo" class="img-responsive"></a>
                 </div> <!-- End of .logo -->
 
                 <nav class="navbar navbar-default float_right">
