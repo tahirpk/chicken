@@ -144,6 +144,7 @@ class SliderController extends Controller
 
     /* ----------------------------- edit category action --------------------- */
     public function edit($id) {
+        dd($id);
         if (Permission::hasAccess('edit', 'news')) {
             
             $news = Slider::where('id', $id)->first();
