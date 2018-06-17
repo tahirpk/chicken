@@ -144,7 +144,7 @@ class SliderController extends Controller
 
     /* ----------------------------- edit category action --------------------- */
     public function edit($id) {
-        dd($id);
+
         if (Permission::hasAccess('edit', 'news')) {
             
             $news = Slider::where('id', $id)->first();
@@ -155,7 +155,7 @@ class SliderController extends Controller
 
     public function remove($id) {
         if (Permission::hasAccess('delete', 'news')) {
-            $news = Slider::find($id);
+            $news = Slider::find($id); dd($id);
 
             if ($news->delete()) {
                 Sliderimage::where('slider_id',$id)->delete();
