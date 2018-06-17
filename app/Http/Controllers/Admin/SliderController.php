@@ -155,7 +155,7 @@ class SliderController extends Controller
 
     public function remove($id) {
         if (Permission::hasAccess('delete', 'news')) {
-            $news = Slider::find($id); dd($id);
+            $news = Slider::findOrFail($id); 
 
             if ($news->delete()) {
                 Sliderimage::where('slider_id',$id)->delete();
