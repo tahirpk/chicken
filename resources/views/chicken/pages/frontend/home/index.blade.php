@@ -7,7 +7,6 @@
                     ============================================== 
             -->
             <div id="theme-main-banner">
-                @if(sizeof($slider->images)>0)
                 @foreach($slider->images as $image)
                 <div data-src="{{ asset('assets/'.Config::get('config.front_template').'/frontend/images/home/'.$image->image)}}">
                     <div class="camera_caption">
@@ -19,7 +18,6 @@
                     </div> <!-- /.camera_caption -->
                 </div>
                 @endforeach
-                @endif
                 
             </div> <!-- /#theme-main-banner -->
 

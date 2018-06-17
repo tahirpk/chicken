@@ -24,7 +24,7 @@ class FrontendController extends Controller
         $categories =   Category::limit(6)->orderby('created_at','DESC')->get();
         $newses =   News::limit(3)->orderby('created_at','DESC')->get();
         $slider     =   Slider::where('slider_key','home')->first();
-        $slider2     =   Slider::where('slider_key','home-2')->first();
+        $slider2    =   Slider::where('slider_key','home-2')->first();
         return view(Config::get('config.front_template') . '.pages.frontend.home.index')->withAboutus($about)->withSlider($slider)->withSlider2($slider2)->withCategories($categories)->withNewses($newses);
     }
     
